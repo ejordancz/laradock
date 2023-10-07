@@ -1379,3 +1379,8 @@ WORKDIR /var/www
 CMD ["php-fpm"]
 
 EXPOSE 9000
+
+# Enable color prompt + add info into prompt about container type and php version
+RUN echo "PS1='\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]php-fpm@${LARADOCK_PHP_VERSION}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+# Without color
+# RUN echo "PS1='${debian_chroot:+($debian_chroot)}php-fpm@${LARADOCK_PHP_VERSION}:\w\$ '" >> ~/.bashrc

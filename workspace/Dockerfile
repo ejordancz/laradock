@@ -1875,3 +1875,8 @@ RUN apt-get clean && \
 
 # Set default work directory
 WORKDIR /var/www
+
+# Enable color prompt
+RUN sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" ~/.bashrc
+# Add info into prompt about container type and php version
+RUN sed -i "s/\\\u@\\\h/workspace@php${LARADOCK_PHP_VERSION}/" ~/.bashrc

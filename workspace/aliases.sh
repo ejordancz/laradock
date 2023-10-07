@@ -88,6 +88,8 @@ alias ra="reload"
 alias reload="source ~/.aliases && echo \"$COL_GREEN ==> Aliases Reloaded... $COL_RESET \n \""
 alias run="npm run"
 
+alias clc="php bin/console cache:clear && php bin/console doctrine:cache:clear-result && php bin/console doctrine:cache:clear-query && php bin/console doctrine:cache:clear-metadata"
+
 # Xvfb
 alias xvfb="Xvfb -ac :0 -screen 0 1024x768x16 &"
 
